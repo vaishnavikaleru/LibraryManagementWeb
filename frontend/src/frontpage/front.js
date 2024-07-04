@@ -1,6 +1,11 @@
 import './Front.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import img from '../Images/book.png';
+import img2 from '../Images/Image2.jpg';
+import video from '../Videos/video.mp4';
+
 function Front()
 {
     return (
@@ -62,3 +67,4 @@ function Front()
             </div>
             )
 }
+export default Front;

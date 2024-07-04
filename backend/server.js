@@ -4,6 +4,17 @@ const dotenv=require('dotenv');
 const mongoose=require('mongoose');
 const cors=require('cors');
 
+app.use(cors());
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+dotenv.config({
+path: 'config.env',
+debug: true,
+});
+
+mongoose.connect(process.env.MONGO_URI,{dbName:'LibraryManagement'})
+.then(e=>console.log('database connected successfully!'))
+.catch(e=>console.log(e.message));
 
 
 app.listen(process.env.PORT || 2000,()=>{

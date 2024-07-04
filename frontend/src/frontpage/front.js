@@ -52,6 +52,13 @@ function Front()
                         </video>
                     </div>
             </div>
+            <div className='thirdbackground two'>
+                <img src={img2} width="700" height="500"/>
+                <div className='centerpart'>
+                <h2>Cloud Sync keeps your collections updated across multiple devices.</h2>
+                    <h3>Access your collections from anywhere on virtually any device.</h3>
+                    </div>
+            </div>
             </div>
             )
 }

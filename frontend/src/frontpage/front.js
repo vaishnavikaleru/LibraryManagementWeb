@@ -23,7 +23,7 @@ function Front()
             <div id='navbar' className={scrolled?'scrolled':'noscroll'}>
                 <div className='logo' onClick={()=>navigate('/')}>
                 <h1>Library Tool</h1>
-                <img src={img} alt='book' width="50px" height="50px"/>
+                <img src={img} alt='book' width="50px" height="70px"/>
                 </div>
                     <nav>
                         <h2>Price</h2>

@@ -1,13 +1,22 @@
-import './Front.css';
+import './front.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import img from '../Images/book.png';
 import img2 from '../Images/Image2.jpg';
-import video from '../Videos/video.mp4';
+// import video from '../Videos/video.mp4';
 
 function Front()
 {
+    const [scrolled,setscrolled]=useState(false);
+    useEffect(()=>{
+     const handleScroll=()=>{
+     const scroll=window.scrollY;
+     setscrolled(scroll>0);}
+     window.addEventListener('scroll',handleScroll);
+    },[]);
+ 
+   const navigate=useNavigate();
     return (
         <div>
         <div className='firstbackground'>
@@ -52,9 +61,9 @@ function Front()
                     </h3>
                     </div>
                 <div className='img'>
-                    <video width="600" height="350" autoPlay loop>
+                    {/* <video width="600" height="350" autoPlay loop>
                         <source src={video} type='video/mp4'></source>
-                        </video>
+                        </video> */}
                     </div>
             </div>
             <div className='thirdbackground two'>

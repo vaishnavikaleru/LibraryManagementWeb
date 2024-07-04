@@ -22,7 +22,7 @@ function Front()
         <div className='firstbackground'>
             <div id='navbar' className={scrolled?'scrolled':'noscroll'}>
                 <div className='logo' onClick={()=>navigate('/')}>
-                <h1>Library Management</h1>
+                <h1>Library Tool</h1>
                 <img src={img} alt='book' width="50px" height="50px"/>
                 </div>
                     <nav>
@@ -34,7 +34,7 @@ function Front()
                     </nav>
                 </div>
                 <div className='centerpart'>
-                    <h1>Cloud Cataloging</h1>
+                    <h1>Cataloging</h1>
                     <h3>Your library has never looked so good.<br/>
                      Books, Movies, Music and Video Games.</h3>
                      <button>Get Started</button>
@@ -60,11 +60,7 @@ function Front()
                     <h3>Automatic Data for Books, Movies, Music and Video Games
                     </h3>
                     </div>
-                <div className='img'>
-                    {/* <video width="600" height="350" autoPlay loop>
-                        <source src={video} type='video/mp4'></source>
-                        </video> */}
-                    </div>
+          
             </div>
             <div className='thirdbackground two'>
                 <img src={img2} width="700" height="500"/>

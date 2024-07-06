@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import { BrowserRouter,Route,Router,Routes } from 'react-router-dom';
 import Front from './frontpage/front';
+import Login from './login/login';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
        <Routes>
           <Route  path="/" element={<Front/>}/>
+          <Route path="/login" element={<Login/>} />
        </Routes>
     </BrowserRouter>
     <App />

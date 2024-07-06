@@ -1,11 +1,44 @@
-import '../LoginPage/login.css';
+import '../login/login.css';
 import img from '../Images/book.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 const url='http://localhost:2000/user/login';
 
-function login()
+function Login()
 {
+    const navigate=useNavigate();
+    const [email,setemail]=useState('');
+    const [password,setpassword]=useState('');
+
+    const [scrolled,setscrolled]=useState(false);
+
+    const submitData=async ()=>{
+        const datafetched=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(
+            {
+                'email':email,
+                'password':password,
+            }
+        )});
+        if(datafetched.ok)
+        {
+            const data=await datafetched.json();
+            alert(data.message);
+            if(data.login)
+             {
+                document.cookie=`ID=${data.token}`;
+                navigate('/home',{state:{data:data.name}});
+            }
+            else
+               navigate('/login');
+        }
+    }
+
+    useEffect(()=>{
+    const handleScroll=()=>{
+    const scroll=window.scrollY;
+    setscrolled(scroll>0);}
+    window.addEventListener('scroll',handleScroll);
+   },[]);
 return (
     <div>
     <div className='firstbackground'>

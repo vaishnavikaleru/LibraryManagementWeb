@@ -3,7 +3,7 @@ import search from '../Images/search.png';
 import btn from '../Images/switch.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import './addcollectionpage.css';
 const url='http://localhost:2000/collection/';
 
 function Collection()
@@ -67,7 +67,7 @@ function Collection()
             <div className='bar1'>
                 <h2>Collection Title</h2>
                 <input type='text' placeholder='Collection Title' onChange={(e)=>setCollectionName({...collectionName,collectionname:e.target.value})}/>
-                <h4>Limit 40 characters. e.g. (My Books, Movie Wishlist, Console Games, Family CD Collection).</h4>
+                <h4>e.g. (My Books, Movie Wishlist, Console Games, Family CD Collection).</h4>
             </div>
             <div className='bar2'>
                 <h2>Language</h2>

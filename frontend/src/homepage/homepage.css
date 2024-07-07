@@ -9,18 +9,19 @@
 {
    width:20%;
    height:100vh;
-   background-color: rgb(238, 238, 238);
+   background-color: rgba(197, 235, 255, 0.375);
 }
 .Page .subpage2
 {
    width:80%;
    height:100vh;
-   background-color: white;
+   background-color:  rgba(197, 235, 255, 0.762);
 }
 .Page .subpage1 .logo
 {
     display: flex;
     justify-content: center;
+    align-items: center;
     width:100%;
   
     img{

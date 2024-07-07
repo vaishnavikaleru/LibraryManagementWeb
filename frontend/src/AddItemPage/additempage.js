@@ -92,7 +92,7 @@ function Item()
             <div className='bar3'>
                 <h2>Search for Books </h2>
                 <input type='text' placeholder='Search'/>
-                <h4>Search by ISBN or keyword. ISBN search will auto-add an item.</h4>
+                <h4>Search by keyword.</h4>
             </div>
          
             <div className='results'>

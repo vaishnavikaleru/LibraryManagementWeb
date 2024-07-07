@@ -4,7 +4,7 @@ const dotenv=require('dotenv');
 const mongoose=require('mongoose');
 const cors=require('cors');
 const registerPageRoute=require('./Routes/registerroute.js');
-
+const collectionPageRoute=require('./Routes/CollectionRoute.js');
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -14,6 +14,7 @@ debug: true,
 });
 
 app.use('/user',registerPageRoute);
+app.use('/collection',collectionPageRoute);
 
 mongoose.connect(process.env.MONGO_URI,{dbName:'LibraryManagement'})
 .then(e=>console.log('database connected successfully!'))

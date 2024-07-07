@@ -27,8 +27,8 @@ function Home()
     <div className='Page'>
         <div className='subpage1'>
             <div className='logo'>
-             <h2>Library</h2>
-              <img src={img} width='50' height='50'/>
+             <h2>Library Tool</h2>
+              <img src={img} width='20' height='30'/>
             </div>
             <div className='sectiontop'>
                 <h2>Lib</h2>

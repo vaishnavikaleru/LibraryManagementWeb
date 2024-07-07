@@ -9,6 +9,19 @@ import { useEffect, useState
  } from 'react';
 function Home()
 { 
+    const [cookie,setcookie]=useState('');
+    const logout=()=>{
+       document.cookie=`ID=,expires=Thu, 01 Jan 1970 00:00:00 UTC,`;
+       setcookie('');
+       navigate('/login');
+    }
+    useEffect(()=>{
+      const cookie=document.cookie.split(';')[0].split('=')[1]
+      setcookie(cookie);
+      if(!cookie)
+         logout();
+  },[]);
+     
   const location=useLocation();
   const navigate=useNavigate();
   return(

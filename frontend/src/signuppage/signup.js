@@ -4,10 +4,11 @@ import img2 from '../Images/Image2.jpg';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const signUpUrl='http://localhost:2000/user/register'; 
+
 function SignUp()
 {
     const navigate=useNavigate();
-const signUpUrl='http://localhost:2000/user/register'; 
 const [name,setname]=useState('');
 const [email,setemail]=useState('');
 const [password,setpassword]=useState('');

@@ -6,6 +6,58 @@ import { useNavigate } from 'react-router-dom';
 
 function SignUp()
 {
+    const navigate=useNavigate();
+const signUpUrl='http://localhost:2000/user/register'; 
+const [name,setname]=useState('');
+const [email,setemail]=useState('');
+const [password,setpassword]=useState('');
+const [cpassword,setcpassword]=useState('');
+const [error,seterror]=useState('');
+const [response,setresponse]=useState('');
+const [scrolled,setscrolled]=useState(false);
+
+ const submitData=async ()=>{
+   const regex='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
+   if(email=='' || name==null || !email.match(regex))
+   {
+       seterror('place the email');
+       return;
+   }
+   if(name=='' || name==null)
+   {
+       seterror('place the name');
+       return;
+   }
+   if(password=='' || password==null)
+   {
+       seterror('place the password');
+       return;
+   }
+   if(cpassword=='' || cpassword==null)
+   {
+       seterror('place the password');
+       return;
+   }
+   if(cpassword!==password)
+   {
+       seterror('password not match!');
+       return;
+   }
+
+    const dataposted=fetch(signUpUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+       "name":name,
+       "email":email,
+       "password":password,
+       "confirmpassword":cpassword
+    })}).then(e=>e.json()).then(e=>{alert(e)}).catch(e=>alert(e));
+ }
+useEffect(()=>{
+    const handleScroll=()=>{
+    const scroll=window.scrollY;
+    setscrolled(scroll>0);}
+    window.addEventListener('scroll',handleScroll);
+   },[]);
+
     return (
         <div>
 

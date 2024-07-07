@@ -7,6 +7,8 @@ import Front from './frontpage/front';
 import Login from './login/login';
 import SignUp from './signuppage/signup.js';
 import Home from './homepage/homepage.js';
+import Collection from './AddCollectionPage/addcollectionpage.js';
+import Item from './AddItemPage/additempage.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

@@ -1,13 +1,40 @@
-import './ItemPage.css';
+import './itempage.css';
 import img from '../Images/book.png';
 import search from '../Images/search.png';
 import btn from '../Images/switch.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+const url='http://localhost:2000/collection/find';
 
 function Item()
 {
+    const navigate=useNavigate();
+  
+    const [collectionname,setcollection]=useState([]);
+  
+    useEffect(()=>{
+      findCollections();
+    },[collectionname]);
+  
+    const findCollections=async ()=>{
+       await fetch(url,{method:'Get',headers:{'Content-Type':'application/json'}}).then(e=>e.json())
+       .then(e=>{setcollection(e);});
+    }
+  
+    const [cookie,setcookie]=useState('');
+    const logout=()=>{
+       document.cookie=`ID=,expires=Thu, 01 Jan 1970 00:00:00 UTC,`;
+       setcookie('');
+       navigate('/login');
+    }
+    useEffect(()=>{
+      const cookie=document.cookie.split(';')[0].split('=')[1]
+      setcookie(cookie);
+      if(!cookie)
+         logout();
+  },[]);
+
     return(
     <div className='Page'>
     <div className='subpage1'>

@@ -1,5 +1,4 @@
-import home from './Home.module.css';
-import './Home.css';
+import './homepage.css';
 import img from '../Images/book.png';
 import search from '../Images/search.png';
 import btn from '../Images/switch.jpg'

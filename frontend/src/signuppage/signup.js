@@ -77,7 +77,7 @@ useEffect(()=>{
                 </div>
                 <div className={signup.centerlogin}>
                 <h1>Sign Up for Library Management</h1>
-
+                <h2>Your library catalog available anywhere, anytime.</h2>
                    <div className={signup.form}>
                         <div className='headtitle'>
                         <h2>Account Info</h2>

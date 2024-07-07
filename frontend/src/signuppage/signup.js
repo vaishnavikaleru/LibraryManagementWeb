@@ -1,4 +1,4 @@
-import signup  from './signup.css';
+import signup  from './signup.module.css';
 import img from '../Images/book.png';
 import img2 from '../Images/Image2.jpg';
 import { useEffect, useState } from 'react';

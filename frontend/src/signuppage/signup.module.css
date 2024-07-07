@@ -1,0 +1,19 @@
+.centerlogin
+{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    height:100% ;
+}
+.centerlogin h1
+{
+    margin-top:500px;
+    font-weight:bold;
+}
+.centerlogin h2:first-of-type
+{
+    margin-top:-35px;
+    font-size:65px;
+}

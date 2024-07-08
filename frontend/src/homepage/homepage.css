@@ -8,13 +8,13 @@
 .Page .subpage1
 {
    width:20%;
-   height:100vh;
+   height:auto;
    background-color: rgba(197, 235, 255, 0.375);
 }
 .Page .subpage2
 {
    width:80%;
-   height:100vh;
+   height:auto;
    background-color:  rgba(197, 235, 255, 0.762);
 }
 .Page .subpage1 .logo

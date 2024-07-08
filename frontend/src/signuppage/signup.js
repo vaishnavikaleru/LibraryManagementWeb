@@ -8,7 +8,7 @@ const signUpUrl='http://localhost:2000/user/register';
 
 function SignUp()
 {
-    const navigate=useNavigate();
+const navigate=useNavigate();
 const [name,setname]=useState('');
 const [email,setemail]=useState('');
 const [password,setpassword]=useState('');

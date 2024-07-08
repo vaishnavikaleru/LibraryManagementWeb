@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 
 const url='http://localhost:2000/collection/find';
 
+const googlebookapi='https://www.googleapis.com/books/v1/volumes'
 function Item()
 {
     const navigate=useNavigate();
@@ -34,6 +35,16 @@ function Item()
       if(!cookie)
          logout();
   },[]);
+   
+  function BookApi(bookName="twain")
+  {
+    fetch(`${googlebookapi}?q=${bookName}`)
+    .then(e=>e.json())
+    .then(data=>{
+    console.log(data)
+  }).catch(e=>console.log("erro thrown",e));
+
+  }
 
     return(
     <div className='Page'>
@@ -59,7 +70,7 @@ function Item()
         <div className='subpage2'>
           <div className='searchbar'>
             <div className='search'>
-              <h1>Add Your Collection</h1>
+              <h1>Add Your Items</h1>
             </div>
             <div className='logout'>
                <h3>username</h3>
@@ -91,7 +102,7 @@ function Item()
             </div>
             <div className='bar3'>
                 <h2>Search for Books </h2>
-                <input type='text' placeholder='Search'/>
+                <input type='text' placeholder='Search' onChange={(e)=>BookApi(e.target.value)}/>
                 <h4>Search by keyword.</h4>
             </div>
          

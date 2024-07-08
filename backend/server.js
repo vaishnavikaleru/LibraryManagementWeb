@@ -21,6 +21,6 @@ mongoose.connect(process.env.MONGO_URI,{dbName:'LibraryManagement'})
 .catch(e=>console.log(e.message));
 
 
-app.listen(process.env.PORT || 2000,()=>{
+app.listen(process.env.PORT || 2000,'0.0.0.0',()=>{
     console.log('connection established!');
 });

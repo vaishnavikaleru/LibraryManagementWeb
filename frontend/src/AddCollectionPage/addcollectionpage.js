@@ -1,13 +1,14 @@
 import img from '../Images/book.png';
 import search from '../Images/search.png';
 import btn from '../Images/switch.jpg';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './addcollectionpage.css';
 const url='http://localhost:2000/collection/';
 
 function Collection()
 {
+  const location=useLocation();
     const [message,setmessage]=useState('');
     const [collectionName,setCollectionName]=useState({collectionname:'',language:'Arabic'});
     const updateCollection=()=>{
@@ -58,7 +59,7 @@ function Collection()
               <h1>Add Your Collection</h1>
             </div>
             <div className='logout'>
-               <h3>username</h3>
+               <h3>Hi! {sessionStorage.getItem("username")}</h3>
                <img src={btn} width='50' height='50'/>
             </div>
           </div>

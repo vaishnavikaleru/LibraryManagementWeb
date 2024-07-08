@@ -27,6 +27,7 @@ function Login()
              {
                 document.cookie=`ID=${data.token}`;
                 navigate('/home',{state:{data:data.name}});
+                sessionStorage.setItem("username",data.name);
             }
             else
                navigate('/login');

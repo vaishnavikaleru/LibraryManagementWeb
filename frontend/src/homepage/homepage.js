@@ -73,7 +73,7 @@ function Home()
               <input type='text' placeholder='Start Searching' onChange={(e)=>{BookApi(e.target.value)}}></input>
             </div>
             <div className='logout'>
-               <h3>Hi! {location.state.data}</h3>
+               <h3>Hi! {sessionStorage.getItem("username")}</h3>
                <img src={btn} width='50' height='50'/>
             </div>
           </div>

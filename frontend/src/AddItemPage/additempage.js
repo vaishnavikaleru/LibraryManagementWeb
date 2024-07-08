@@ -2,7 +2,7 @@ import './itempage.css';
 import img from '../Images/book.png';
 import search from '../Images/search.png';
 import btn from '../Images/switch.jpg';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import $ from 'jquery';
 
@@ -12,7 +12,7 @@ const googlebookapi='https://www.googleapis.com/books/v1/volumes'
 function Item()
 {
     const navigate=useNavigate();
-  
+    const location=useLocation();
     const [collectionname,setcollection]=useState([]);
   
     useEffect(()=>{
@@ -79,7 +79,7 @@ function Item()
               <h1>Add Your Items</h1>
             </div>
             <div className='logout'>
-               <h3>username</h3>
+               <h3>Hi! {sessionStorage.getItem("username")}</h3>
                <img src={btn} width='50' height='50'/>
             </div>
           </div>

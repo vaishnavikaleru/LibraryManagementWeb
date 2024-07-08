@@ -90,6 +90,7 @@
         height:100%;
         border: none;
         margin-left:20px;
+        text-indent: 10px;
     }
     input:focus
     {
@@ -106,6 +107,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 12px;
+    color: rgb(7, 67, 118);
 }
 .searchbar .logout h3
 {

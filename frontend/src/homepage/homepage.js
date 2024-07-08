@@ -4,10 +4,15 @@ import search from '../Images/search.png';
 import btn from '../Images/switch.jpg'
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useEffect, useState
- } from 'react';
+import { useEffect, useState} from 'react';
+import $ from 'jquery';
+
+
+ const googlebookapi='https://www.googleapis.com/books/v1/volumes'
 function Home()
 { 
+  const location=useLocation();
+  const navigate=useNavigate();
     const [cookie,setcookie]=useState('');
     const logout=()=>{
        document.cookie=`ID=,expires=Thu, 01 Jan 1970 00:00:00 UTC,`;
@@ -19,10 +24,27 @@ function Home()
       setcookie(cookie);
       if(!cookie)
          logout();
+
+      console.log(location.state.data)
   },[]);
      
-  const location=useLocation();
-  const navigate=useNavigate();
+
+
+  const [bookData,setBookData]=useState([]);
+  function BookApi(bookName="twain")
+  {
+    fetch(`${googlebookapi}?q=${bookName}`)
+    .then(e=>e.json())
+    .then(data=>{
+      if(data)
+      {
+        $('.results').css('display','flex')
+      }
+      setBookData(data.items || []);
+    
+  }).catch(e=>console.log("erro thrown",e));
+  console.log(bookData)
+  }
   return(
     <div className='Page'>
         <div className='subpage1'>
@@ -48,14 +70,26 @@ function Home()
           <div className='searchbar'>
             <div className='search'>
               <img src={search} width='25px' height='25px'/>
-              <input type='text' placeholder='Start Searching'></input>
+              <input type='text' placeholder='Start Searching' onChange={(e)=>{BookApi(e.target.value)}}></input>
             </div>
             <div className='logout'>
                <h3>Hi! {location.state.data}</h3>
                <img src={btn} width='50' height='50'/>
             </div>
           </div>
+          <div className='results'>
+              <div className='sectionresult'>
+              {bookData.map((e, index) => (
+                <div className='imagesection' key={index}>
+                  <img src={e.volumeInfo.imageLinks?.thumbnail || img} alt={e.volumeInfo.title} />
+                  <h1>{e.volumeInfo.title}</h1>
+                  <button>Add Book</button>
+                </div>
+              ))}
+            </div>
+            </div>
         </div>
+          
     </div>
   );
 }

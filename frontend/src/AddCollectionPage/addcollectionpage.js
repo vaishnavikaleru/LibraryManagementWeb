@@ -4,7 +4,8 @@ import btn from '../Images/switch.jpg';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './addcollectionpage.css';
-const url='http://localhost:2000/collection/';
+
+const url='https://librarymanagementweb-backend.onrender.com/';
 
 function Collection()
 {

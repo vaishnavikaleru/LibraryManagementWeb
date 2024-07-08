@@ -4,7 +4,7 @@ import img2 from '../Images/Image2.jpg';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const signUpUrl='http://localhost:2000/user/register'; 
+const signUpUrl='https://librarymanagementweb-backend.onrender.com/user/register'; 
 
 function SignUp()
 {

@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import $ from 'jquery';
 
-const url='http://localhost:2000/collection/find';
+const url='https://librarymanagementweb-backend.onrender.com/collection/find';
 
 const googlebookapi='https://www.googleapis.com/books/v1/volumes'
 function Item()

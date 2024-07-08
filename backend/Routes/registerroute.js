@@ -1,4 +1,4 @@
-const model=require('../Models/registermodel.js');
+const model=require('../models/registermodel.js');
 const express=require('express');
 const router=express.Router();
 const jwt=require('jsonwebtoken');

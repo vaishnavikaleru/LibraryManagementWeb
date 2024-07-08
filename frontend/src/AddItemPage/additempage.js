@@ -4,6 +4,7 @@ import search from '../Images/search.png';
 import btn from '../Images/switch.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import $ from 'jquery';
 
 const url='http://localhost:2000/collection/find';
 
@@ -36,16 +37,21 @@ function Item()
          logout();
   },[]);
    
+  const [bookData,setBookData]=useState([]);
   function BookApi(bookName="twain")
   {
     fetch(`${googlebookapi}?q=${bookName}`)
     .then(e=>e.json())
     .then(data=>{
-    console.log(data.items[0].volumeInfo)
+      if(data)
+      {
+        $('.results').css('display','flex')
+      }
+      setBookData(data.items || []);
+    
   }).catch(e=>console.log("erro thrown",e));
-
+  console.log(bookData)
   }
-
     return(
     <div className='Page'>
     <div className='subpage1'>
@@ -109,58 +115,13 @@ function Item()
          
             <div className='results'>
               <div className='sectionresult'>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
-              <div className='imagesection'>
-                <img src={img}/>
-                <h1>Image</h1>
-              </div>
+              {bookData.map((e, index) => (
+                <div className='imagesection' key={index}>
+                  <img src={e.volumeInfo.imageLinks?.thumbnail || img} alt={e.volumeInfo.title} />
+                  <h1>{e.volumeInfo.title}</h1>
+                  <button>Add Book</button>
+                </div>
+              ))}
             </div>
             </div>
         </div>

@@ -10,9 +10,11 @@
    width:20%;
    height:auto;
    background-color: rgba(197, 235, 255, 0.375);
+   min-height: 100vh;
 }
 .Page .subpage2
 {
+   min-height: 100vh;
    width:80%;
    height:auto;
    background-color:  rgba(197, 235, 255, 0.762);

@@ -41,7 +41,7 @@ function Item()
     fetch(`${googlebookapi}?q=${bookName}`)
     .then(e=>e.json())
     .then(data=>{
-    console.log(data)
+    console.log(data.items[0].volumeInfo)
   }).catch(e=>console.log("erro thrown",e));
 
   }
@@ -100,6 +100,7 @@ function Item()
                 </select>
                 <h4>The type of item are you adding.</h4>
             </div>
+          
             <div className='bar3'>
                 <h2>Search for Books </h2>
                 <input type='text' placeholder='Search' onChange={(e)=>BookApi(e.target.value)}/>
@@ -107,8 +108,60 @@ function Item()
             </div>
          
             <div className='results'>
-            <hr/>
-               <h1>Results</h1>
+              <div className='sectionresult'>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+              <div className='imagesection'>
+                <img src={img}/>
+                <h1>Image</h1>
+              </div>
+            </div>
             </div>
         </div>
         </div>
